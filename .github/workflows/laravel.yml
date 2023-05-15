@@ -33,8 +33,14 @@ jobs:
     - name: Install npm dependencies
       run: npm install
 
-    - name: Run npm run dev
-      run: npm run dev
+#    - name: Run npm run dev
+#      run: npm run dev
+
+    - name: Install Vite
+      run: npm install -g vite
+
+    - name: Set LARAVEL_BYPASS_ENV_CHECK
+      run: export LARAVEL_BYPASS_ENV_CHECK=1
 
     - name: Generate key
       run: php artisan key:generate
